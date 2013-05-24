@@ -1,43 +1,10 @@
-//* normalize.scss v2.1.0 | MIT/GPLv2 License | bit.ly/normalize-with-compass */
-//updated to use susys rem calculator
-
-// The base font size.
-
-$base-font-size: $base-size !default; // Override default set in Compass' Vertical Rhythm partial.
-
-
-// The base line height determines the basic unit of vertical rhythm.
-// $base-line-height: 24px; // Override default set in Compass' Vertical Rhythm partial.
-
-// The font sizes for h1-h6.
-$h1-font-size: 2    * $base-font-size !default;
-$h2-font-size: 1.5  * $base-font-size !default;
-$h3-font-size: 1.17 * $base-font-size !default;
-$h4-font-size: 1    * $base-font-size !default;
-$h5-font-size: 0.83 * $base-font-size !default;
-$h6-font-size: 0.67 * $base-font-size !default;
-
-
-// The default font family.
-$base-font-family: sans-serif !default;
-
-// The amount lists and blockquotes are indented.
-$indent-amount: 40px !default;
-
-// After the default variables are set, import the required Compass partials.
-@import "compass/support";
-@import "compass/css3/box-sizing";
-@import "compass/typography/vertical_rhythm";
-
-
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
-
 /**
  * Correct `block` display not defined in IE 8/9.
  */
-
+/* line 52, scss/partials/_normalize.scss */
 article,
 aside,
 details,
@@ -50,46 +17,43 @@ main,
 nav,
 section,
 summary {
-    display: block;
+  display: block;
 }
 
 /**
  * Correct `inline-block` display not defined in IE 8/9.
  */
-
+/* line 62, scss/partials/_normalize.scss */
 audio,
 canvas,
 video {
-    display: inline-block;
-    @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
-        *display: inline;
-        *zoom: 1;
-    }
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
 }
 
 /**
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
-
+/* line 75, scss/partials/_normalize.scss */
 audio:not([controls]) {
-    display: none;
-    height: 0;
+  display: none;
+  height: 0;
 }
 
 /**
  * Address styling not present in IE 7/8/9.
  * Known issue: no IE 6 support.
  */
-
+/* line 85, scss/partials/_normalize.scss */
 [hidden] {
-    display: none;
+  display: none;
 }
 
 /* ==========================================================================
    Base
    ========================================================================== */
-
 /**
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
@@ -97,344 +61,354 @@ audio:not([controls]) {
  * 3. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
  *    `em` units.
  */
-
+/* line 101, scss/partials/_normalize.scss */
 html {
-    font-family: $base-font-family; /* 1 */
-    font-size: 100% * ($base-font-size / 16px); /* 3 */
-    -webkit-text-size-adjust: 100%; /* 2 */
-    -ms-text-size-adjust: 100%; /* 2 */
-    /* Establish a vertical rhythm unit using $base-line-height. */
-    @include rem(line-height,$base-font-size);
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 93.75%;
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  /* Establish a vertical rhythm unit using $base-line-height. */
+  line-height: 15px;
+  line-height: 1rem;
 }
 
-@if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
-    /**
-     * Address `font-family` inconsistency between `textarea` and other form
-     * elements in IE 6/7.
-     */
-
-    button,
-    input,
-    select,
-    textarea {
-        font-family: $base-font-family;
-    }
+/**
+ * Address `font-family` inconsistency between `textarea` and other form
+ * elements in IE 6/7.
+ */
+/* line 119, scss/partials/_normalize.scss */
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
 }
 
 /**
  * Remove default margin.
  */
-
+/* line 128, scss/partials/_normalize.scss */
 body {
-    margin: 0;
+  margin: 0;
 }
 
 /* ==========================================================================
    Links
    ========================================================================== */
-
 /**
  * Address `outline` inconsistency between Chrome and other browsers.
  */
-
+/* line 140, scss/partials/_normalize.scss */
 a:focus {
-    outline: thin dotted;
+  outline: thin dotted;
 }
 
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
-
+/* line 149, scss/partials/_normalize.scss */
 a:active,
 a:hover {
-    outline: 0;
+  outline: 0;
 }
 
 /* ==========================================================================
    Typography
    ========================================================================== */
-
 /**
  * Set 1 unit of vertical rhythm on the top and bottom margin.
  */
-
+/* line 162, scss/partials/_normalize.scss */
 p,
 pre {
-    @include rem(margin, $base-font-size 0)
-    
+  margin: 15px 0;
+  margin: 1rem 0;
 }
 
+/* line 167, scss/partials/_normalize.scss */
 blockquote {
-    /* Set 1 unit of vertical rhythm on the top and bottom margin. */
-    @include rem(margin, $base-font-size $indent-amount)
+  /* Set 1 unit of vertical rhythm on the top and bottom margin. */
+  margin: 15px 40px;
+  margin: 1rem 2.66667rem;
 }
 
 /**
  * Address variable `h1` font-size and margin within `section` and `article`
  * contexts in Firefox 4+, Safari 5, and Chrome.
  */
-
-
-
+/* line 179, scss/partials/_normalize.scss */
 h1 {
-    $fs: $h1-font-size;
-    $lh: $h1-font-size*1.5;
-    $mg: $h1-font-size 0;
-    
-    @include copy-block($fs,$lh,$mg);
+  font-size: 30px;
+  font-size: 2rem;
+  line-height: 45px;
+  line-height: 3rem;
+  margin: 30px 0;
+  margin: 2rem 0;
 }
 
+/* line 187, scss/partials/_normalize.scss */
 h2 {
-  $fs: $h2-font-size;
-  $lh: $h2-font-size*1.5;
-  $mg: $h2-font-size 0;
-  
-  @include copy-block($fs,$lh,$mg);
-  
+  font-size: 23px;
+  font-size: 1.5rem;
+  line-height: 34px;
+  line-height: 2.25rem;
+  margin: 23px 0;
+  margin: 1.5rem 0;
 }
 
+/* line 196, scss/partials/_normalize.scss */
 h3 {
-  $fs: $h3-font-size;
-  $lh: $h3-font-size*1.5;
-  $mg: $h3-font-size 0;
-  
-  @include copy-block($fs,$lh,$mg);
-     
+  font-size: 18px;
+  font-size: 1.17rem;
+  line-height: 26px;
+  line-height: 1.755rem;
+  margin: 18px 0;
+  margin: 1.17rem 0;
 }
 
+/* line 205, scss/partials/_normalize.scss */
 h4 {
-  $fs: $h4-font-size;
-  $lh: $h4-font-size*1.5;
-  $mg: $h4-font-size 0;
-  
-  @include copy-block($fs,$lh,$mg);
-    
+  font-size: 15px;
+  font-size: 1rem;
+  line-height: 23px;
+  line-height: 1.5rem;
+  margin: 15px 0;
+  margin: 1rem 0;
 }
 
+/* line 214, scss/partials/_normalize.scss */
 h5 {
-  $fs: $h5-font-size;
-  $lh: $h5-font-size*1.5;
-  $mg: $h5-font-size 0;
-  
-  @include copy-block($fs,$lh,$mg);
-    
+  font-size: 12px;
+  font-size: 0.83rem;
+  line-height: 19px;
+  line-height: 1.245rem;
+  margin: 12px 0;
+  margin: 0.83rem 0;
 }
 
+/* line 223, scss/partials/_normalize.scss */
 h6 {
-  $fs: $h6-font-size;
-  $lh: $h6-font-size*1.5;
-  $mg: $h6-font-size 0;
-  
-  @include copy-block($fs,$lh,$mg);
-     
+  font-size: 10px;
+  font-size: 0.67rem;
+  line-height: 15px;
+  line-height: 1.005rem;
+  margin: 10px 0;
+  margin: 0.67rem 0;
 }
 
-p{
-  $fs: $base-font-size;
-  $lh: $base-font-size*1.5;
-  $mg: $base-font-size 0;
-  
-  @include copy-block($fs,$lh,$mg);
- 
+/* line 232, scss/partials/_normalize.scss */
+p {
+  font-size: 15px;
+  font-size: 1rem;
+  line-height: 23px;
+  line-height: 1.5rem;
+  margin: 15px 0;
+  margin: 1rem 0;
 }
 
 /**
  * Address styling not present in IE 8/9, Safari 5, and Chrome.
  */
-
+/* line 245, scss/partials/_normalize.scss */
 abbr[title] {
-    border-bottom: 1px dotted;
+  border-bottom: 1px dotted;
 }
 
 /**
  * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
  */
-
+/* line 254, scss/partials/_normalize.scss */
 b,
 strong {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 /**
  * Address styling not present in Safari 5 and Chrome.
  */
-
+/* line 262, scss/partials/_normalize.scss */
 dfn {
-    font-style: italic;
+  font-style: italic;
 }
 
 /**
  * Address differences between Firefox and other browsers.
  * Known issue: no IE 6/7 normalization.
  */
-
+/* line 271, scss/partials/_normalize.scss */
 hr {
-    @include box-sizing(content-box);
-    height: 0;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
 }
 
 /**
  * Address styling not present in IE 8/9.
  */
-
+/* line 280, scss/partials/_normalize.scss */
 mark {
-    background: #ff0;
-    color: #000;
+  background: #ff0;
+  color: #000;
 }
 
 /**
  * Correct font family set oddly in Safari 5 and Chrome.
  */
-
+/* line 292, scss/partials/_normalize.scss */
 code,
 kbd,
 pre,
 samp {
-    font-family: monospace, serif;
-    @if $legacy-support-for-ie6 {
-        _font-family: 'courier new', monospace;
-    }
-     @include rem(font-size, 1 * $base-font-size );
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 15px;
+  font-size: 1rem;
 }
 
 /**
  * Improve readability of pre-formatted text in all browsers.
  */
-
+/* line 304, scss/partials/_normalize.scss */
 pre {
-    white-space: pre-wrap;
+  white-space: pre-wrap;
 }
 
 /**
  * Set consistent quote types.
  */
-
+/* line 312, scss/partials/_normalize.scss */
 q {
-    quotes: "\201C" "\201D" "\2018" "\2019";
+  quotes: "\201C" "\201D" "\2018" "\2019";
 }
 
 /**
  * Address inconsistent and variable font size in all browsers.
  */
-
+/* line 320, scss/partials/_normalize.scss */
 small {
-    font-size: 80%;
+  font-size: 80%;
 }
 
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-
+/* line 329, scss/partials/_normalize.scss */
 sub,
 sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
 
+/* line 336, scss/partials/_normalize.scss */
 sup {
-    @include rem(top, -($base-font-size/2));
+  top: -8px;
+  top: -0.5rem;
 }
 
+/* line 340, scss/partials/_normalize.scss */
 sub {
-    @include rem(bottom, -($base-font-size/2));
+  bottom: -8px;
+  bottom: -0.5rem;
 }
 
 /* ==========================================================================
    Lists
    ========================================================================== */
-
 /**
  * Set 1 unit of vertical rhythm and a consistent indentation.
  */
-
+/* line 355, scss/partials/_normalize.scss */
 dl,
 menu,
 ol,
 ul {
-    @include rem(padding, 0 0 0 $indent-amount );
-    @include rem(margin, $base-font-size 0 );
+  padding: 0 0 0 40px;
+  padding: 0 0 0 2.66667rem;
+  margin: 15px 0;
+  margin: 1rem 0;
 }
 
+/* line 360, scss/partials/_normalize.scss */
 dl {
-    padding: 0;
+  padding: 0;
 }
 
+/* line 364, scss/partials/_normalize.scss */
 dd {
-   @include rem(margin, 0 0 0 $indent-amount );
+  margin: 0 0 0 40px;
+  margin: 0 0 0 2.66667rem;
 }
 
-@if $legacy-support-for-ie7 {
-    /**
-     * Correct list images handled incorrectly in IE 7.
-     */
-
-    nav ul,
-    nav ol {
-        list-style: none;
-        list-style-image: none;
-    }
+/**
+ * Correct list images handled incorrectly in IE 7.
+ */
+/* line 374, scss/partials/_normalize.scss */
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
 }
 
 /* ==========================================================================
    Embedded content
    ========================================================================== */
-
 /**
  * Remove border when inside `a` element in IE 8/9.
  */
-
+/* line 388, scss/partials/_normalize.scss */
 img {
-    border: 0;
-    @if $legacy-support-for-ie7 {
-        /* Improve image quality when scaled in IE 7. */
-        -ms-interpolation-mode: bicubic;
-    }
+  border: 0;
+  /* Improve image quality when scaled in IE 7. */
+  -ms-interpolation-mode: bicubic;
 }
 
 /**
  * Correct overflow displayed oddly in IE 9.
  */
-
+/* line 400, scss/partials/_normalize.scss */
 svg:not(:root) {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 /* ==========================================================================
    Figures
    ========================================================================== */
-
 /**
  * Address margin not present in IE 8/9 and Safari 5.
  */
-
+/* line 412, scss/partials/_normalize.scss */
 figure {
-    margin: 0;
+  margin: 0;
 }
 
 /* ==========================================================================
    Forms
    ========================================================================== */
-
-@if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
-    /**
-     * Correct margin displayed oddly in IE 6/7.
-     */
-
-    form {
-        margin: 0;
-    }
+/**
+ * Correct margin displayed oddly in IE 6/7.
+ */
+/* line 425, scss/partials/_normalize.scss */
+form {
+  margin: 0;
 }
 
 /**
  * Define consistent border, margin, and padding.
  */
-
+/* line 434, scss/partials/_normalize.scss */
 fieldset {
-    @include rem(padding, $base-font-size );
-    @include rem(margin,0 0 $base-font-size );
-    border:none;
+  padding: 15px;
+  padding: 1rem;
+  margin: 0 0 15px;
+  margin: 0 0 1rem;
+  border: none;
 }
 
 /**
@@ -442,13 +416,14 @@ fieldset {
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  * 3. Correct alignment displayed oddly in IE 6/7.
  */
-
+/* line 446, scss/partials/_normalize.scss */
 legend {
-    border: 0; /* 1 */
-    padding: 0; /* 2 */
-    @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
-        *margin-left: -7px; /* 3 */
-    }
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */
 }
 
 /**
@@ -457,28 +432,31 @@ legend {
  * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
  * 4. Improve appearance and consistency with IE 6/7.
  */
-
+/* line 464, scss/partials/_normalize.scss */
 button,
 input,
 select,
 textarea {
-    font-family: inherit; /* 1 */
-    font-size: 100%; /* 2 */
-    margin: 0; /* 3 */
-    @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
-        vertical-align: baseline; /* 4 */
-        *vertical-align: middle; /* 4 */
-    }
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+  vertical-align: baseline;
+  /* 4 */
+  *vertical-align: middle;
+  /* 4 */
 }
 
 /**
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-
+/* line 480, scss/partials/_normalize.scss */
 button,
 input {
-    line-height: normal;
+  line-height: normal;
 }
 
 /**
@@ -487,10 +465,10 @@ input {
  * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
  * Correct `select` style inheritance in Firefox 4+ and Opera.
  */
-
+/* line 492, scss/partials/_normalize.scss */
 button,
 select {
-    text-transform: none;
+  text-transform: none;
 }
 
 /**
@@ -502,25 +480,26 @@ select {
  * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
  *    Known issue: inner spacing remains in IE 6.
  */
-
+/* line 509, scss/partials/_normalize.scss */
 button,
-html input[type="button"], /* 1 */
+html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    -webkit-appearance: button; /* 2 */
-    cursor: pointer; /* 3 */
-    @if $legacy-support-for-ie7 {
-        *overflow: visible; /* 4 */
-    }
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+  *overflow: visible;
+  /* 4 */
 }
 
 /**
  * Re-set default cursor for disabled elements.
  */
-
+/* line 522, scss/partials/_normalize.scss */
 button[disabled],
 html input[disabled] {
-    cursor: default;
+  cursor: default;
 }
 
 /**
@@ -529,15 +508,19 @@ html input[disabled] {
  * 3. Remove excess padding in IE 7.
  *    Known issue: excess padding remains in IE 6.
  */
-
+/* line 534, scss/partials/_normalize.scss */
 input[type="checkbox"],
 input[type="radio"] {
-    @include box-sizing(border-box); /* 1 */
-    padding: 0; /* 2 */
-    @if $legacy-support-for-ie7 {
-        *height: 13px; /* 3 */
-        *width: 13px; /* 3 */
-    }
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */
 }
 
 /**
@@ -545,51 +528,64 @@ input[type="radio"] {
  * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
  *    (include `-moz` to future-proof).
  */
-
+/* line 549, scss/partials/_normalize.scss */
 input[type="search"] {
-    -webkit-appearance: textfield; /* 1 */
-    @include box-sizing(content-box); /* 2 */
+  -webkit-appearance: textfield;
+  /* 1 */
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  /* 2 */
 }
 
 /**
  * Remove inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
-
+/* line 560, scss/partials/_normalize.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-
+/* line 569, scss/partials/_normalize.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-    border: 0;
-    padding: 0;
+  border: 0;
+  padding: 0;
 }
 
 /**
  * 1. Remove default vertical scrollbar in IE 8/9.
  * 2. Improve readability and alignment in all browsers.
  */
-
+/* line 579, scss/partials/_normalize.scss */
 textarea {
-    overflow: auto; /* 1 */
-    vertical-align: top; /* 2 */
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
 }
 
 /* ==========================================================================
    Tables
    ========================================================================== */
-
 /**
  * Remove most spacing between table cells.
  */
-
+/* line 592, scss/partials/_normalize.scss */
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 13, scss/style.scss */
+body {
+  padding: 10px 10px 10px;
+  padding: 0.66667rem 0.66667rem 0.66667rem;
+  line-height: 10px;
+  line-height: 0.66667rem;
 }
