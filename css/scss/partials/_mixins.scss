@@ -6,7 +6,7 @@
 }
 
 //clearfix
-@mixin clearfix() {
+%clearfix{
     & {
         *zoom: 1;
     }
