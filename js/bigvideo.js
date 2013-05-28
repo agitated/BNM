@@ -66,16 +66,7 @@
 					$(vidEl+'_flash_api')
 						.css('width',windowH*mediaAspect)
 						.css('height',windowH);
-				} else {
-					// is image
-					$('#big-video-image')
-						.css({
-							width: 'auto',
-							height: windowH,
-							top:0,
-							left:-(windowH*mediaAspect-windowW)/2
-						});
-				}
+				} 
 			} else {
 				// wider
 				if (currMediaType === 'video') {
@@ -90,16 +81,7 @@
 					$(vidEl+'_flash_api')
 						.css('width',windowW)
 						.css('height',windowW/mediaAspect);
-				} else {
-					// is image
-					$('#big-video-image')
-						.css({
-							width: windowW,
-							height: 'auto',
-							top:-(windowW/mediaAspect-windowH)/2,
-							left:0
-						});
-				}
+				} 
 			}
 		}
 
@@ -223,7 +205,7 @@
 				updateSize();
 			});
         }
-
+       
 		BigVideo.init = function() {
 			if (!isInitialized) {
 				// create player

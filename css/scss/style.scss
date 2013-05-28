@@ -1,4 +1,4 @@
-// Mixins and Variables
+// base
 @import "partials/base"; 
 
 //layout
@@ -13,4 +13,15 @@
 body{
   @include rem(padding, 10px 10px 10px);
   @include rem(line-height,10px)
+}
+
+.main{
+  @extend %clearfix;
+  position:absolute;
+  z-index:99;
+}
+
+footer{
+  @extend %clearfix;
+  height:50px;
 }
