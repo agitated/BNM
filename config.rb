@@ -1,12 +1,12 @@
 # Require any additional compass plugins here.
 
 # Set this to the root of your project when deployed:
-http_path = "/"
-css_dir = "css"
-sass_dir = "css/scss"
-images_dir = "images"
-javascripts_dir = "js"
-fonts_dir = "fonts"
+http_path = "public/"
+css_dir = "public/css"
+sass_dir = "scss"
+images_dir = "public/images"
+javascripts_dir = "public/js"
+fonts_dir = "public/fonts"
 
 output_style = :expanded
 
@@ -22,4 +22,4 @@ color_output = false
 # project again passing --syntax sass, or you can uncomment this:
 # preferred_syntax = :sass
 # and then run:
-# sass-convert -R --from scss --to sass css/scss scss && rm -rf sass && mv scss sass
+# sass-convert -R --from scss --to sass scss scss && rm -rf sass && mv scss sass

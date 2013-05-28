@@ -1,0 +1,9 @@
+header{
+  background:url("../images/header-shadow.png") top center repeat-x;
+  @include background(linear-gradient(bottom,hsla(0,0%,100%,0)0%, hsla(0,0,0,0.5)100%));
+
+  position:relative;
+  z-index:100;
+  @include rem(padding,10px);
+  @include rem(height,200px);
+}

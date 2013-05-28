@@ -9,7 +9,7 @@ $break-xlarge: 1180px;
 @mixin breakpoint($media) {
    @if $media == xxsml {
     @media only screen and (max-width: $break-xsmall) { @content; }
-  } 
+  }
  @else if  $media == xsml {
     @media only screen and (max-width: $break-small) { @content; }
   }
@@ -29,3 +29,38 @@ $break-xlarge: 1180px;
   }
 
 }
+
+/*   !----  $break-xxsmall ----   */
+@include breakpoint(xxsml)
+{
+}
+
+/*   !----  $break-xsml ----   */
+@include breakpoint(xsml)
+{
+}
+
+/*   !----  $break-sml ----   */
+@include breakpoint(sml)
+{
+}
+
+/*   !----  $break-med ----   */
+@include breakpoint(med)
+{
+}
+
+/*   !----  $break-lrg ----   */
+@include breakpoint(lrg)
+{
+}
+
+/*   !----  $break-xlrg ----   */
+@include breakpoint(xlrg)
+{
+  #contaier{
+    @include center-block();
+    @include rem(width,1300px);
+  }
+}
+
